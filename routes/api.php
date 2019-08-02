@@ -24,11 +24,12 @@ Route::post('logout', 'Auth\LoginController@logout');
 Route::get('user/{user}', 'UserController@show');
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('posts', 'PostController@index');
+    Route::get('posts/list', 'PostController@index');
     Route::get('posts/{post}', 'PostController@show');
     Route::post('posts', 'PostController@store');
-    Route::post('posts/{post}', 'PostController@update');
+    Route::put('posts/{post}', 'PostController@update');
     Route::delete('posts/{post}', 'PostController@delete');
 
     Route::post('vote', 'VoteController@vote');
+//    Route::post('posts/vote', 'VoteController@vote');
 });
