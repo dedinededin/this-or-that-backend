@@ -36,8 +36,8 @@ class PostController extends Controller
 
         $post = new Post();
         $post->user_id = $user->id;
-        $post->left_image = $request->leftImageUrl;
-        $post->right_image = $request->rightImageUrl;
+        $post->left_image = $request->left_image;
+        $post->right_image = $request->right_image;
         $post->description = $request->description;
 
         $post->save();
